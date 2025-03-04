@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arya:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+@layer components {
+  .transition-all-ease {
+    @apply transition-all ease-in-out duration-300;
+  }
+  .btn-hover-effect {
+    @apply relative px-4 py-2 overflow-hidden border text-white border-primary-blue bg-primary-blue  shadow-2xl transition-all before:absolute before:left-0 before:right-0 before:top-0 before:h-0 before:w-full before:bg-white before:duration-500 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0 after:w-full after:bg-white after:duration-500 hover:text-primary-blue  hover:before:h-2/4 hover:after:h-2/4 active:bg-white active:text-primary-blue active:border-primary-blue;
+  }
+}
+
+.emoji-404 {
+  position: relative;
+  animation: mymove 2.5s infinite;
+}
+
+@keyframes mymove {
+  33% {
+    top: 0px;
+  }
+  66% {
+    top: 20px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+.stroke-white {
+  -webkit-text-stroke: 1px white;
+}
+.text-transparent {
+  color: transparent;
+}
