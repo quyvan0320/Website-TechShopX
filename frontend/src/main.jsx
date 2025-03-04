@@ -29,7 +29,7 @@ import Orders from "./pages/Admin/Orders.jsx";
 import OrderDetail from "./pages/Admin/OrderDetail.jsx";
 import LoginAdmin from "./pages/Admin/LoginAdmin.jsx";
 import Vouchers from "./pages/Admin/Vouchers.jsx";
-import CreateVoucher from "./pages/Admin/createVoucher.jsx";
+import CreateVoucher from "./pages/Admin/CreateVoucher.jsx";
 import ForgotPassword from "./pages/Auth/ForgotPassword.jsx";
 import ResetPassword from "./pages/Auth/ResetPassword.jsx";
 import NotFound from "./components/NotFound.jsx";
