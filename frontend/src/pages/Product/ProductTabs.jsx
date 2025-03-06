@@ -186,7 +186,7 @@ const ProductTabs = ({
                 <button
                   type="submit"
                   disabled={loadingReview}
-                  className={`w-1/2 py-3 text-primary-dark bg-white font-bold transition-all-ease ${
+                  className={`w-full md:w-1/2 py-3 text-primary-dark bg-white font-bold transition-all-ease ${
                     loadingReview
                       ? "bg-gray-500 cursor-not-allowed"
                       : "bg-white hover:bg-gray-500"

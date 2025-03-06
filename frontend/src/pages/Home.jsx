@@ -18,24 +18,26 @@ const Home = () => {
   console.log(newProduct);
   return (
     <>
-      <div className="pb-12 bg-primary-dark">
+      <div className="pb-12 bg-primary-dark px-4 lg:px-0">
         <div className="container max-w-screen-xl mx-auto min-h-[80vh] ">
           {!keyword ? <ProductFutured /> : null}
-          <h2 className=" font-arya text-white text-4xl mt-6">
+          <h2 className=" font-arya text-white text-2xl md:text-4xl mt-6">
             Sản Phẩm Xu Hướng
           </h2>
-          <div className="grid grid-cols-4 gap-4 mt-3">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-3">
             {data?.products?.map((product) => (
               <div key={product._id}>
                 <ProductsItem product={product} />
               </div>
             ))}
           </div>
+            <div className="">
 
-          <h2 className=" font-arya text-white text-4xl mt-6 mb-2">
+          <h2 className=" font-arya text-white text-2xl md:text-4xl mt-6 mb-2">
             Sản Phẩm Mới Nhất
           </h2>
           <ProductSlider tagNew={"Mới"} products={newProduct} />
+            </div>
 
           <div className="mt-14">
             <h2 className=" font-arya text-white text-3xl text-center">
@@ -44,7 +46,7 @@ const Home = () => {
             <p className=" font-arya text-primary-light text-lg text-center">
               TechShopX - Điểm đến hàng đầu cho mọi tín đồ công nghệ!
             </p>
-            <div className="flex justify-around gap-8 mt-4">
+            <div className="flex-col space-y-6  md:space-y-0 flex md:flex-row justify-around gap-8 mt-4">
               <div className="flex flex-col justify-center items-center bg-primary-bgthin border border-primary-light p-4 gap-2">
                 <p className="font-bold text-4xl uppercase border-2  text-primary-dark bg-white w-[80px] h-[80px] rounded-full flex justify-center items-center">
                   <FaHandHoldingHeart />

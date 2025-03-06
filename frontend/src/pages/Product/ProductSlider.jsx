@@ -15,6 +15,20 @@ const ProductSlider = ({ tagNew, products }) => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024, // Khi màn hình nhỏ hơn 1024px (md)
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 640, // Khi màn hình nhỏ hơn 640px (sm)
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
     arrows: false,
   };
   const sliderRef = useRef(null);
@@ -29,11 +43,12 @@ const ProductSlider = ({ tagNew, products }) => {
           <IoIosArrowBack size={24} />
         </span>
       </button>
+      <div className="w-full">
       <Slider {...settings} ref={sliderRef}>
         {products?.map((product, index) => (
           <div
             key={product._id}
-            className="p-4 bg-primary-bgthin relative group space-y-2"
+            className="p-4 bg-primary-bgthin w-full relative group space-y-2"
           >
             <Link to={`/product/${product._id}`}>
               <img
@@ -67,6 +82,7 @@ const ProductSlider = ({ tagNew, products }) => {
           </div>
         ))}
       </Slider>
+      </div>
       <button
         onClick={() => sliderRef.current?.slickNext()}
         className="absolute top-1/2 right-0 z-10 px-2 -translate-y-1/2 btn-hover-effect"

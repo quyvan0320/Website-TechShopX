@@ -33,7 +33,7 @@ const Shipping = () => {
   const validateInputs = () => {
     const phoneNumberError =
       isRequire(phoneNumber, "Vui lòng nhập đúng số điện thoại") ||
-      isPhoneNumber(phoneNumber, "Nhập đúng số điện thoại");
+      isPhoneNumber(phoneNumber, "Nhập đúng 10 số");
     if (phoneNumberError) {
       toast.error(phoneNumberError);
       return false;

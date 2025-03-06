@@ -95,10 +95,10 @@ const Order = () => {
   return (
     <div>
       <header className=" bg-white border-b border-gray-300 py-4">
-        <nav className="container max-w-screen-lg mx-auto flex items-center justify-between">
+        <nav className="container max-w-screen-lg px-4 lg:px-0 mx-auto flex items-center justify-between">
           <img
             src={logoOrder}
-            className="w-[300px] object-cover object-center"
+            className="w-[120px] md:w-[200px] lg:w-[300px] object-cover object-center"
             alt=""
           />
           <Link to="/cart">
@@ -114,9 +114,9 @@ const Order = () => {
         <Message variant={"error"}>{error.data.error}</Message>
       ) : (
         <main>
-          <div className="grid grid-cols-2 h-screen">
+          <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 lg:h-screen">
             {/* Phần thông tin đơn hàng */}
-            <div className="p-4 pl-[162px]">
+            <div className="p-4 lg:pl-[162px]">
               <h1 className="text-2xl font-bold text-primary-dark text-left font-arya mb-4 ">
                 Thông Tin Đơn Hàng
               </h1>
@@ -227,7 +227,7 @@ const Order = () => {
             </div>
 
             {/* Phần danh sách đơn hàng với nền xám */}
-            <div className="bg-gray-100 p-4 overflow-y-auto pr-[162px] border-l border-gray-300">
+            <div className="bg-gray-100 p-4 overflow-y-auto lg:pr-[162px] border-l border-gray-300">
               {order.orderItems?.length === 0 ? (
                 <div>Đơn hàng của bạn đang trống!</div>
               ) : (

@@ -8,7 +8,7 @@ const ProductFutured = () => {
   const { data, refetch, isLoading, error } = useFetchTopProductsQuery();
   console.log(data);
   return (
-    <div className="container max-w-screen-xl mx-auto h-full pt-2">
+    <div className="container max-w-screen-xl mx-auto h-full  pt-2">
     
       {isLoading ? (
         <Loader />
@@ -16,15 +16,15 @@ const ProductFutured = () => {
        error ? (
         <Message variant="error">{error?.data?.error || error.message}</Message>
       ) : (
-        <div className="grid grid-cols-2 gap-4">
-            <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1  lg:grid-cols-2 gap-4 ">
+            <div className="hidden lg:grid grid-cols-2 gap-4">
                 {data.map(product => 
                     <div key={product._id}>
                         <SmallProducts tagTop={"TOP"} product={product}/>
                     </div>
                 )}
             </div>
-            <div className="row-span-2">
+            <div className="row-span-1 md:row-span-2">
                 <CarouselProduct/>
             </div>
         </div>

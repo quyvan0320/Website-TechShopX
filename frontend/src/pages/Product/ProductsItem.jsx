@@ -12,14 +12,14 @@ const ProductsItem = ({ product }) => {
       <Link to={`/product/${product._id}`} className="relative">
         <img
           src={product.image}
-          className="w-full h-[200px] object-center object-cover "
+          className="w-full h-[100px] md:h-[200px] object-center object-cover "
           alt={product.name}
         />
       </Link>
 
-      <p className="text-[15px] text-white font-bold mt-2 ">
-        {product.name.length > 28
-          ? `${product.name.substring(0, 28)}...`
+      <p className="text-sm md:text-[15px] text-white font-bold mt-2 ">
+        {product.name.length > 20
+          ? `${product.name.substring(0, 20)}...`
           : product.name}
       </p>
       <Ratings value={product.rating} color={`primary-light`} size={16} />

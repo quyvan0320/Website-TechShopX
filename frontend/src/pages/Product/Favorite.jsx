@@ -39,13 +39,13 @@ const Favorite = () => {
   return (
     <>
       <BreakCrumb heading={"Yêu Thích"} />
-      <div className="py-12 bg-primary-dark">
+      <div className="p-4 md:py-12 bg-primary-dark">
         <div className="mx-auto container max-w-screen-xl min-h-[80vh]">
           <h1 className="text-4xl font-bold text-white font-arya mb-6 text-center">
             Yêu Thích ({favorites?.length})
           </h1>
 
-          <div className="grid grid-cols-4">
+          <div className="hidden md:grid grid-cols-4">
             <div className="bg-primary-bgthin text-center font-bold text-lg py-2 col-span-1 text-primary-light">
               Sản Phẩm
             </div>
@@ -63,10 +63,10 @@ const Favorite = () => {
             favorites?.map((favorite) => (
               <div
                 key={favorite._id}
-                className="grid grid-cols-4 items-center border-b border-primary-border"
+                className="flex flex-col md:grid md:grid-cols-4 items-center border-b border-primary-border"
               >
                 <Link
-                  className="col-span-1 py-6 px-4"
+                  className="col-span-1 md:py-6 px-4"
                   to={`/product/${favorite._id}`}
                 >
                   <img
@@ -75,14 +75,14 @@ const Favorite = () => {
                     className="w-[250px] h-[150px] object-cover object-center"
                   />
                 </Link>
-                <div className="col-span-1 text-white py-6 px-4 text-center space-y-3">
+                <div className="col-span-1 text-white md:py-6 px-4 text-center space-y-3">
                   <p className="text-sm">{favorite.brand}</p>
                   <p className="text-xl font-arya">{favorite.name}</p>
                   <p className="font-bold text-primary-red">
                     {numeral(favorite.price).format("0,0").replace(/,/g, ".")}₫
                   </p>
                 </div>
-                <div className="col-span-1 text-white py-6 px-4 text-center">
+                <div className="col-span-1 text-white py-2 md:py-6 px-4 text-center">
                   <Link to="/cart">
                     <button className="btn-hover-effect">
                       <span className="relative z-10">Thêm Vào Giỏ Hàng</span>

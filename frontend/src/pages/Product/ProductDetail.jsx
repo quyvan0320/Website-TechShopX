@@ -88,7 +88,7 @@ const ProductDetail = () => {
     <>
       <BreakCrumb heading={product?.name} />
       <div className="py-12 bg-primary-dark">
-        <div className="container mx-auto max-w-screen-xl min-h-[80vh]">
+        <div className="container px-4 lg:px-0 mx-auto max-w-screen-xl min-h-[80vh]">
           {isLoading ? (
             <Loader />
           ) : error ? (
@@ -97,12 +97,12 @@ const ProductDetail = () => {
             </Message>
           ) : (
             <>
-              <div className="grid grid-cols-[1.7fr_2.3fr] gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-[1.7fr_2.3fr] gap-8">
                 <div className="relative">
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-[500px] object-cover object-center"
+                    className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover object-center"
                   />
                   {product.countInStock < 1 && (
                     <div className="font-bold text-red-500 absolute top-6 left-0 font-arya text-xl -rotate-45">
@@ -169,7 +169,7 @@ const ProductDetail = () => {
                       }
                     />
                   </div>
-                  <div className=" text-white grid grid-cols-2 gap-6 justify-between mt-6">
+                  <div className=" text-white grid grid-cols-1 md:grid-cols-2 gap-6 justify-between mt-6">
                     <p className="flex items-center gap-2 col-span-1 font-medium">
                       THƯƠNG HIỆU:
                       <span className="text-sm font-normal">

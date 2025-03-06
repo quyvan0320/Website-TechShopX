@@ -32,11 +32,11 @@ const Cart = () => {
   return (
     <>
       <BreakCrumb heading={"Giỏ hàng Của Bạn"} />
-      <div className="py-12 bg-primary-dark">
+      <div className="p-4 md:py-12 bg-primary-dark">
         <div className="mx-auto container max-w-screen-xl min-h-[80vh]  ">
-          <div className="grid grid-cols-6 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-6 md:gap-8">
             <div className="col-span-4">
-              <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr]">
+              <div className="hidden md:grid md:grid-cols-[1fr_1.5fr_1fr_1fr]">
                 <div className="bg-primary-bgthin text-left px-2  font-bold text-lg py-2  text-primary-light">
                   Hình Ảnh
                 </div>
@@ -54,7 +54,7 @@ const Cart = () => {
                 cartItems?.map((item) => (
                   <div
                     key={item._id}
-                    className="grid grid-cols-[1fr_1.5fr_1fr_1fr] items-center py-2 border-b border-primary-border"
+                    className="flex flex-col md:grid md:grid-cols-[1fr_1.5fr_1fr_1fr] items-center  py-2 border-b border-primary-border"
                   >
                     <Link to={`/product/${item._id}`}>
                       <img
@@ -63,7 +63,7 @@ const Cart = () => {
                         className="w-[150px] h-[150px] object-cover object-center"
                       />
                     </Link>
-                    <div className=" text-white py-6 space-y-3">
+                    <div className=" text-white text-center py-2  md:py-6 space-y-3">
                       <p className="text-xl font-arya">{item.name}</p>
                       <p className="font-bold text-primary-red">
                         {numeral(item.price).format("0,0").replace(/,/g, ".")}₫
@@ -71,8 +71,8 @@ const Cart = () => {
                     </div>
                     <div className=" text-white text-center">
                       {item.countInStock > 0 && (
-                        <div className="flex items-center gap-1">
-                          <div className="flex items-center">
+                        <div className="flex items-center flex-col md:flex-row gap-1">
+                          <div className="flex  items-center">
                             {/* Nút giảm số lượng */}
                             <button
                               onClick={() => {
@@ -110,13 +110,13 @@ const Cart = () => {
                             <button
                               onClick={() => removeFromCartHandler(item._id)}
                             >
-                              <GoTrash className="text-primary-red" size={24} />
+                              <GoTrash className="text-primary-red mt-1 md:mt-0" size={24} />
                             </button>
                           </div>
                         </div>
                       )}
                     </div>
-                    <p className="text-right font-bold text-white">
+                    <p className="text-center md:text-right font-bold  mt-2 md:mt-0 text-white">
                       {numeral(item.price * item.qty)
                         .format("0,0")
                         .replace(/,/g, ".")}
@@ -134,8 +134,8 @@ const Cart = () => {
               )}
             </div>
 
-            <div className="col-span-2 bg-primary-bgthin max-h-[200px] p-4 ">
-              <div className="flex justify-between items-center">
+            <div className="grid-cols-1 md:col-span-2 bg-primary-bgthin lg:max-h-[200px] p-4 mt-4 md:mt-0">
+              <div className="flex justify-between items-center ">
                 <p className="text-white font-medium">
                   Sản Phẩm ({cartItems.reduce((acc, item) => acc + item.qty, 0)}
                   ):

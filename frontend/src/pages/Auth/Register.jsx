@@ -89,7 +89,7 @@ const Register = () => {
     }
   };
   return (
-    <div className="py-12 bg-primary-dark">
+    <div className="p-4 md:py-12 bg-primary-dark">
       <div className="container mx-auto max-w-screen-sm min-h-[80vh]">
         <form
           onSubmit={submitHandler}

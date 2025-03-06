@@ -79,8 +79,8 @@ const PlaceOrder = () => {
         {cart.cartItems?.length === 0 ? (
           <div>Giỏ hàng của bạn đang trống!</div>
         ) : (
-          <div className="mt-8">
-            <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr]">
+          <div className="mt-8 p-4 lg:p-0">
+            <div className="hidden md:grid grid-cols-[1fr_1.5fr_1fr_1fr]">
               <div className="bg-primary-bgthin text-left px-2  font-bold text-lg py-2  text-primary-light">
                 Hình Ảnh
               </div>
@@ -97,7 +97,7 @@ const PlaceOrder = () => {
             {cart.cartItems.map((item, index) => (
               <div
                 key={item._id}
-                className="grid grid-cols-[1fr_1.5fr_1fr_1fr] items-center py-2 border-b border-primary-border"
+                className="flex flex-col md:grid grid-cols-[1fr_1.5fr_1fr_1fr] items-center py-2 border-b border-primary-border"
               >
                 <Link to={`/product/${item._id}`}>
                   <img
@@ -106,9 +106,9 @@ const PlaceOrder = () => {
                     className="w-[100px] h-[100px] object-cover object-center"
                   />
                 </Link>
-                <div className=" text-white py-6 space-y-3">
+                <div className=" text-white md:py-6 space-y-3">
                   <p className="text-xl font-arya">{item.name}</p>
-                  <p className="font-bold text-primary-red">
+                  <p className="font-bold text-center md:text-left text-primary-red">
                     {numeral(item.price).format("0,0").replace(/,/g, ".")}₫
                   </p>
                 </div>
@@ -126,7 +126,7 @@ const PlaceOrder = () => {
               <h2 className=" font-arya text-white text-xl">
                 Xác Nhận Đơn Hàng
               </h2>
-              <div className="bg-primary-bgthin p-4 rounded-md mt-2 flex justify-between items-start">
+              <div className="bg-primary-bgthin p-4 rounded-md mt-2 flex flex-col md:flex-row justify-between items-start">
                 <div className="space-y-1">
                   <p className="flex items-center font-medium gap-2 text-white">
                     SẢN PHẨM:
@@ -233,7 +233,7 @@ const PlaceOrder = () => {
                 </div>
               )}
 
-              <div className="flex justify-end">
+              <div className="flex justify-end mt-6 md:mt-0">
                 <button
                   type="submit"
                   disabled={!cart.cartItems.length}

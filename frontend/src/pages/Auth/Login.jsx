@@ -70,9 +70,9 @@ const Login = () => {
     }
   };
   return (
-    <div className="py-12 bg-primary-dark">
+    <div className="p-4 md:py-12 bg-primary-dark">
       <div className="container mx-auto max-w-screen-lg min-h-[80vh]">
-        <div className=" grid grid-cols-2 gap-10 ">
+        <div className=" grid grid-cols-1 md:grid-cols-2 gap-10 ">
           <form
             onSubmit={submitHandler}
             className="px-6 py-4 bg-primary-bgthin h-full space-y-6"
@@ -181,7 +181,7 @@ const Login = () => {
                 </button>
               </Link>
             </div>
-            <div className="bg-primary-blue flex px-6 py-16 items-start justify-between">
+            <div className="bg-primary-blue flex flex-col md:flex-row px-6 py-16 items-center gap-4 md:gap-0 md:items-start justify-center md:justify-between">
               <div className="flex flex-col items-center justify-center">
                 <div className="p-5 bg-white">
                   <BsBox2 className=" text-primary-bgthin" size={26} />

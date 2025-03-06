@@ -96,7 +96,7 @@ const Profile = () => {
   return (
     <>
       <BreakCrumb heading="Hồ Sơ" />
-      <div className="py-12 bg-primary-dark">
+      <div className="py-12 px-4 md:px-0 bg-primary-dark">
         <div className="max-w-screen-xl mx-auto container">
           <form
             onSubmit={submitHandler}
