@@ -1,6 +1,6 @@
 # Giới thiệu
 
-Một dự án e-Commerce được phát triển bằng các công nghệ ReactJS, Redux Toolkit, RTK Query, NodeJS, MongoDB và sử dụng thư viện **@paypal/react-paypal-js** để tích hợp thanh toán bằng Paypal. Trang có các chức năng cơ bản của như giỏ hàng, thêm sửa xóa sản phẩm, tìm kiếm, v.v
+Một dự án e-Commerce được phát triển bằng các công nghệ ReactJS, Redux Toolkit, RTK Query, NodeJS, MongoDB và sử dụng thư viện **@paypal/react-paypal-js** để tích hợp thanh toán bằng Paypal. Trang có các chức năng cơ bản như giỏ hàng, thêm sửa xóa sản phẩm, tìm kiếm, v.v
 
 # Chạy dự án trong môi trường phát triển
 
